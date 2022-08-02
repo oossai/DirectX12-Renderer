@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.2.0)
+ADD_DEFINITIONS(-DUNICODE)
+project(DirectX12 VERSION 0.1.0)
+add_executable(${CMAKE_PROJECT_NAME} WIN32 App/WinMain.cpp)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
+target_include_directories(${PROJECT_NAME} PRIVATE D3D12MemAlloc/ Dxc/ Input/)
+set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Executable)
